@@ -4,14 +4,6 @@
 (require '[clojure.repl :refer :all])
 
 (defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
-
-(comment
-  (defn parse_string 
-    [string count] 
-    (
-     print string
-    ))
+  [string countSymbols]
+(clojure.string/replace string (re-pattern (str "(.)\\1{" (str (- countSymbols 1) ",}"))) "")
 )
